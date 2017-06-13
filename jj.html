@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+     img{width: 1000px;}
+     ul{list-style: none;}
+     li{float: left; width: 100px;border: 1px solid #eee; text-align: center; background-color: yellow; border-radius: 5px; }
+     li a{text-decoration: none; display: block; color: blue; }
+     
+      
+	</style>
+</head>
+<body>
+	<img src="images/2.jpg">
+	<ul>
+		<li><a href="images/2.jpg">1</a></li>
+		<li><a href="images/3.jpg">2</a></li>
+		<li><a href="images/4.jpg">3</a></li>
+		<li><a href="images/5.jpg">4</a></li>
+	</ul>
+	<script src="js/jquery-3.0.0.js"></script>
+	<script>
+      $("a").click(function(){
+         var tu = $(this).attr("href");
+      	$("img").attr('src',tu);
+      	// $("a").css({"background-color":"yellow","color":"blue"})
+      	// $(this).css({"background-color":"#fff","color":"red"})
+         $("a").css({"background-color":"#fff","color":"blue"})
+          $(this).parent().siblings().find("a").css({"background-color":"yellow","color":"red"})
+          
+         return false;
+     })
+        
+       // $("li:nth-child(2)>a").click(function(){$("img").attr("src","images/3.jpg")})
+       // $("li:nth-child(3)>a").click(function(){$("img").attr("src","images/4.jpg")})
+       // $("li:nth-child(4)>a").click(function(){$("img").attr("src","images/5.jpg")})
+	</script>
+</body>
+</html>
